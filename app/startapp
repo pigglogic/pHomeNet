@@ -1,0 +1,4 @@
+#!/bin/bash
+pushd target/app
+bin/start.sh $@
+popd

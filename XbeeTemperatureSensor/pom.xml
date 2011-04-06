@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>phomenet</artifactId>
+    <groupId>com.pigglogic</groupId>
+    <version>0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.pigglogic.phomenet</groupId>
+  <artifactId>xbee-temperature-sensor</artifactId>
+
+  <name>Xbee Temperature Sensor Support</name>
+  <description>Provides support for decoding data from XBee temperature sensors.</description>
+  <packaging>bundle</packaging>
+
+  <build>
+      <plugins>
+          <plugin>
+              <groupId>org.apache.felix</groupId>
+              <artifactId>maven-bundle-plugin</artifactId>
+              <extensions>true</extensions>
+              <configuration>
+                  <instructions>
+                      <Bundle-Activator>com.pigglogic.phomenet.xbee.sensor.temperature.impl.BundleActivator</Bundle-Activator>
+                  </instructions>
+              </configuration>
+
+          </plugin>
+      </plugins>
+  </build>
+  <dependencies>
+        <dependency>
+            <groupId>net.michaelpigg</groupId>
+            <artifactId>XbeeLib</artifactId>
+        </dependency>
+      <dependency>
+          <groupId>com.pigglogic.phomenet</groupId>
+          <artifactId>xbee-listener</artifactId>
+          <version>${project.version}</version>
+      </dependency>
+  </dependencies>
+</project>

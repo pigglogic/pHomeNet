@@ -1,0 +1,37 @@
+<style type="text/css">
+    #observations {
+    }
+    .observation {
+        margin: 5px;
+        height: 100px;
+        width: 100px;
+        border: black medium solid;
+    }
+    .temp {
+        font-size: 24pt;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(loadData);
+
+   function loadData() {    
+    $.post('phomenet', null, function(data) {
+            $("observation", data).each(function (i) {
+                var address = this.attributes.address.nodeValue;
+                var div = $("#observations > #" + address);
+                if (div.length > 0) {
+                    div.remove();
+                }
+
+                $("#observations").append("<div class=\"observation\" id=\"" + this.attributes.address.nodeValue + "\">"
+                    + "<div>" + this.attributes.location.nodeValue + "</div>"
+                    + "<div class=\"temp\" >" + this.attributes.value.nodeValue + "</div>"
+                    + "</div>");
+            });
+            window.setTimeout(loadData, 2000);
+         });
+   }
+
+</script>
+<input type="button" value="Refresh" onclick="loadData()"/>
+<div id="observations">No data yet.</div>

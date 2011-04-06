@@ -1,0 +1,4 @@
+unnamed_net2	U2-2 U1-20 
+unnamed_net1	U1-14 R1-2 Z1-2 
+GND	U2-3 U1-10 Z1-1 B1-2 
+Vcc	U2-1 R1-1 U1-1 B1-1 

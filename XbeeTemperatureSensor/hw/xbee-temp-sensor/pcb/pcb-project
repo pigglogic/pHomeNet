@@ -1,0 +1,3 @@
+schematics ../xbee_temp.sch
+output-name xbee-temp-sensor
+elements-dir ../packages
